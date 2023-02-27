@@ -1,22 +1,4 @@
-import subprocess
-
 import setuptools
-
-version = subprocess.check_output([
-    "git",
-    "describe",
-    "--abbrev=0",
-]).strip().decode()
-
-commit = subprocess.check_output([
-    "git",
-    "rev-parse",
-    "HEAD",
-]).strip().decode()
-
-with open('rave/__version__.py', 'w') as init:
-    init.write(f"version = \"{version}\"\n")
-    init.write(f"commit = \"{commit}\"\n")
 
 with open("README.md", "r") as readme:
     readme = readme.read()
@@ -26,7 +8,7 @@ with open("requirements.txt", "r") as requirements:
 
 setuptools.setup(
     name="acids-rave",
-    version=version,
+    version="futorio-fixed",
     author="Antoine CAILLON",
     author_email="caillon@ircam.fr",
     description="RAVE: a Realtime Audio Variatione autoEncoder",
